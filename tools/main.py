@@ -62,7 +62,7 @@ def main():
     now = datetime.datetime.now()
     folder_path = f"images/{now.year}/{now.month}/{now.day}"
     os.makedirs(folder_path, exist_ok=True)
-    file_path = f"{folder_path}/{now.hour}_{now.minute}_{now.second}.{image_name.split('.')[-1]}"
+    file_path = f"{folder_path}/{now.hour}.{now.minute}.{now.second}.{image_name.split('.')[-1]}"
     os.rename(f"ADD_HERE/{image_name}", file_path)
     print("Now commit this change and add the following link to the image tag")
     print(
