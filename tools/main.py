@@ -26,6 +26,7 @@ import os
 import json
 import datetime
 
+
 def main():
     with open("config.json", "r") as f:
         config = json.load(f)
@@ -44,18 +45,18 @@ def main():
 
     if not os.path.exists("ADD_HERE"):
         os.mkdir("ADD_HERE")
-    
+
     input("Add the image to the ADD_HERE folder and press enter to continue")
     while True:
         if len(os.listdir("ADD_HERE")) == 0:
             input("Add the image to the ADD_HERE folder and press enter to continue")
-            
+
         elif len(os.listdir("ADD_HERE")) > 1:
             print("Please only have one image in the ADD_HERE folder")
             input("Press enter once there is only one file in the ADD_HERE folder")
         else:
             break
-    
+
     image_name = os.listdir("ADD_HERE")[0]
 
     now = datetime.datetime.now()
@@ -64,9 +65,12 @@ def main():
     file_path = f"{folder_path}/{now.hour}.{now.minute}.{now.second}.{image_name.split('.')[-1]}"
     os.rename(f"ADD_HERE/{image_name}", file_path)
     print("Now commit this change and add the following link to the image tag")
-    print(f"https://raw.githubusercontent.com/{config['user']}/{config['repo']}/main/{file_path}")
+    print(
+        f"https://raw.githubusercontent.com/{config['user']}/{config['repo']}/main/{file_path}"
+    )
     os.rmdir("ADD_HERE")
     exit()
+
 
 if __name__ == "__main__":
     main()
