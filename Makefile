@@ -9,4 +9,4 @@ python = python3
 all: add
 
 add:
-	$(python) add.py
+	$(python) tools/main.py
