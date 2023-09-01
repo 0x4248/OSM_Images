@@ -5,8 +5,9 @@
 # By: Lewis Evans
 
 python = python3
+tools = tools
 
 all: add
 
 add:
-	$(python) tools/main.py
+	$(python) $(tools)/main.py
