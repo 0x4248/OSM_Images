@@ -14,4 +14,3 @@ A easy way to use Github Raw to host images for OSM.
 ## Licence
 
 This project is licenced under the GNU General Public Licence v3.0. See [LICENCE](LICENCE) for more information.
-```
